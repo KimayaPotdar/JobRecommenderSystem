@@ -1,7 +1,9 @@
 from tkinter import Tk, Frame, Label, Button
 from time import sleep
+global questions, index, button, window
 
 class Question:
+    global questions,index, button, window
     def __init__(self, question, answers):
         self.question = question
         self.answers = answers
@@ -34,34 +36,42 @@ class Question:
         view.pack_forget()
         askQuestion()
 
+def exit():
+    window.destroy()
+
 def askQuestion():
-    global questions, window, index, button, right, number_of_questions
+    global questions, window, index, button, number_of_questions
     if(len(questions) == index + 1):
         Label(window, text="Thank you for answering " + str(number_of_questions) + " questions.").pack()
-        Button(window, text="Exit").pack()
+        Button(window, text="Exit",command=exit).pack()
         return
     button.pack_forget()
     index += 1
     questions[index].getView(window).pack()
 
-questions = []
-file = open("questions.txt", "r")
-line = file.readline()
-while(line != ""):
-    questionString = line
-    answers = []
-    for i in range (5):
-        answers.append(file.readline())
-
-    questions.append(Question(questionString, answers))
+def start_quiz():
+    global questions,index, button, window, number_of_questions
+    questions = []
+    file = open("questions.txt", "r")
     line = file.readline()
-file.close()
-index = -1
-right = 0
-number_of_questions = len(questions)
+    while(line != ""):
+        questionString = line
+        answers = []
+        for i in range (5):
+            answers.append(file.readline())
 
-window = Tk()
-window.geometry('925x425')
-button = Button(window, text="Start", command=askQuestion)
-button.pack()
-window.mainloop()
+        questions.append(Question(questionString, answers))
+        line = file.readline()
+    file.close()
+    index = -1
+    right = 0
+    number_of_questions = len(questions)
+
+    window = Tk()
+    window.geometry('925x425')
+    button = Button(window, text="Start", command=askQuestion)
+    button.pack()
+    window.mainloop()
+
+if __name__ == '__main__':
+    start_quiz()
