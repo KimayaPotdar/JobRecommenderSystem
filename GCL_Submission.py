@@ -9,6 +9,9 @@ from PIL import Image, ImageOps
 
 import PIL.Image
 
+import Rendering_quiz
+from Rendering_quiz import *
+
 
 
 from tkinter import *
@@ -20,6 +23,7 @@ def show_Test_Results():
 
 def new_test():
     print("Start new Test")
+    start_quiz()
 
 
 def display_questionnaire():
