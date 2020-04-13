@@ -12,19 +12,39 @@ import PIL.Image
 import Rendering_quiz
 from Rendering_quiz import *
 
+import Results_for_Company
+from Results_for_Company import *
 
+import Results_for_students
+from Results_for_students import *
 
 from tkinter import *
 from tkinter import simpledialog
 
 
+def show_Candidate_Results():
+    root = Tk()
+    root.geometry('625x625')
+    root.title('EMPLOYER Login - BizInt')
+    frame2 = Frame(root)
+    frame2.pack()
+    l = Label(frame2, text="Following are your company profiles.\n Click on the Profile to know the suitable list of candidates",
+              font='Times 15')
+    b = Button(frame2, text="Teacher", command=show_Teacher_Results, width=40, font='bold')
+    c = Button(frame2, text="Animator", command=show_Animator_Results, width=40, font='bold')
+    d = Button(frame2, text="News Anchor", command=show_Anchor_Results, width=40, font='bold')
+    e = Button(frame2, text="Tourist Guide", command=show_Guide_Results, width=40, font='bold')
+    l.pack(side=TOP,pady=(10, 30))
+    c.pack(side=TOP, padx=(35, 100), pady=(50, 30))
+    b.pack(side=TOP, padx=(35, 100), pady=(30, 30))
+    d.pack(side=TOP, padx=(35, 100), pady=(30, 30))
+    e.pack(side=TOP, padx=(35, 100), pady=(30, 30))
+    root.mainloop()
+
 def show_Test_Results():
+    global u_cand
     print("Show Results")
-
-def new_test():
-    print("Start new Test")
-    start_quiz()
-
+    read_list_from_DB(u_cand)
 
 def display_questionnaire():
     root = Tk()
@@ -32,16 +52,14 @@ def display_questionnaire():
     root.title('Candidate Login - BizInt')
     frame2= Frame(root)
     frame2.pack()
-
     b = Button(frame2, text="View Test Results", command=show_Test_Results, width=20, font='bold')
-    c = Button(frame2, text="Start Personality and Interest Mapping Test", command=new_test, width=150, font='bold')
+    c = Button(frame2, text="Start Personality and Interest Mapping Test", command=start_quiz, width=150, font='bold')
     c.pack(side=TOP,padx=(35, 100),pady=(100, 30))
     b.pack(side=TOP,padx=(35, 100),pady=(30, 30))
     root.mainloop()
 
-
-
 def candidate_login():
+    global u_cand
     u_cand = simpledialog.askstring("CANDIDATE Login", "Please enter your user name: ")
     cnx = sqlite3.connect(r'C:/Users/kimaya pc/PycharmProjects/SmartIndiaHackathon/venv/databases/Job_Recommender_database.db')
     df = pd.read_sql_query("SELECT Username FROM Candidate", cnx)
@@ -53,7 +71,7 @@ def candidate_login():
         return
     else:
         print('Thank you! You shall be redirected to password authentication Page')
-        val.drop(df.index, inplace=True)
+        # val.drop(df.index, inplace=True)
         p_emp = simpledialog.askstring("Candidate Login", "Please enter your password: ")
         df = pd.read_sql_query("SELECT Password FROM Candidate", cnx)
         val1 = df[df['Password'].str.match(p_emp)]
@@ -64,30 +82,39 @@ def candidate_login():
             message.pack()
         else:
             print('Thank you! Your Homepage is being loaded!')
-            val1.drop(df.index, inplace=True)
+            # val1.drop(df.index, inplace=True)
             display_questionnaire()
+    return 0
+
 
 
 def employer_login():
     u_empr = simpledialog.askstring("EMPLOYER Login", "Please enter your user name: ")
     cnx = sqlite3.connect(r'C:/Users/kimaya pc/PycharmProjects/SmartIndiaHackathon/venv/databases/Job_Recommender_database.db')
-    df = pd.read_sql_query("SELECT emp_user_name FROM employer", cnx)
-    val2 = df[df['emp_user_name'].str.match(u_empr)]
+    df = pd.read_sql_query("SELECT Username FROM Employer", cnx)
+    val2 = df[df['Username'].str.match(u_empr)]
     isempty = val2.empty
     if isempty == True:
         print('You are not yet registered as an employer! Please contact Help desk')
+        message = Label(
+            text='Incorrect Username . Try again! \n You may not yet be as an employer! Please contact Help desk',
+            fg='Red')
+        message.pack()
     else:
         print('Thank you! You shall be redirected to password authentication Page')
         val2.drop(df.index, inplace=True)
         p_empr = simpledialog.askstring("EMPLOYER Login", "Please enter your password: ")
-        df = pd.read_sql_query("SELECT emp_password FROM employer", cnx)
-        val3 = df[df['emp_password'].str.match(p_empr)]
+        df = pd.read_sql_query("SELECT Password FROM Employer", cnx)
+        val3 = df[df['Password'].str.match(p_empr)]
         isempty1 = val3.empty
         if isempty1 == True:
             print('Incorrect Password! Please Contact Help Desk!')
+            message = Label(text='Incorrect Password. Try again!', fg='Red')
+            message.pack()
         else:
-            print('Thank you! Your Homepage is being loaded!')
+            print('+++Thank you! Your Homepage is being loaded!')
             val3.drop(df.index, inplace=True)
+            show_Candidate_Results()
     return 0
 
 
@@ -116,6 +143,7 @@ def Startup_Screen():
     c = Button(frame1, text="EMPLOYER LOGIN", command=employer_login, width=20, font='bold')
     b.pack()
     c.pack()
+    # root.destroy()
     mainloop()
 
 

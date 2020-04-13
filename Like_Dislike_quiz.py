@@ -1,9 +1,5 @@
 from tkinter import Tk, Frame, Label, Button
 from time import sleep
-
-import Like_Dislike_quiz
-from Like_Dislike_quiz import *
-
 global questions, index, button, window
 
 class Question:
@@ -14,13 +10,6 @@ class Question:
         # self.correctLetter = correctLetter
 
     def check(self, option, view):
-        # global right
-        # if(letter == self.correctLetter):
-        #     label = Label(view, text="Right!")
-        #     right += 1
-        # else:
-        #     label = Label(view, text="Wrong!")
-        # label.pack()
         selected_answer=option
         print(selected_answer)
         view.after(1000, lambda *args: self.unpackView(view))
@@ -29,11 +18,10 @@ class Question:
     def getView(self, window):
         view = Frame(window)
         Label(view, text=self.question, font='Times 13').pack(pady=20)
-        Button(view, text=self.answers[0], command=lambda *args: self.check(1, view),height=2, width=30,font='Times 12').pack(side='top',pady=5)
-        Button(view, text=self.answers[1], command=lambda *args: self.check(2, view), width=30,font='Times 12').pack(side='top',pady=5)
-        Button(view, text=self.answers[2], command=lambda *args: self.check(3, view), width=30,font='Times 12').pack(side='top',pady=5)
-        Button(view, text=self.answers[3], command=lambda *args: self.check(4, view), width=30,font='Times 12').pack(side='top',pady=5)
-        Button(view, text=self.answers[4], command=lambda *args: self.check(5, view), width=30,font='Times 12').pack(side='top',pady=5)
+        Button(view, text=self.answers[0], command=lambda *args: self.check(self.answers[0], view),height=2, width=30,font='Times 12').pack(side='top',pady=5)
+        Button(view, text=self.answers[1], command=lambda *args: self.check(self.answers[1], view), width=30,font='Times 12').pack(side='top',pady=5)
+        Button(view, text=self.answers[2], command=lambda *args: self.check(self.answers[2], view), width=30,font='Times 12').pack(side='top',pady=5)
+        Button(view, text=self.answers[3], command=lambda *args: self.check(self.answers[3], view), width=30,font='Times 12').pack(side='top',pady=5)
         return view
 
     def unpackView(self, view):
@@ -43,30 +31,24 @@ class Question:
 def exit():
     window.destroy()
 
-def like_Dislike_page():
-    window.destroy()
-    start_like_dislike_quiz()
-
 def askQuestion():
     global questions, window, index, button, number_of_questions
     if(len(questions) == index + 1):
         Label(window, text="Thank you for answering " + str(number_of_questions) + " questions.").pack()
-        Button(window, text="Continue to Part-2 of the Personality and Interesting Mapping Test",command=like_Dislike_page).pack()
-        # Button(window, text="Exit",command=exit).pack()
+        Button(window, text="Exit",command=exit).pack()
         return
-    button.pack_forget()
     index += 1
     questions[index].getView(window).pack()
 
-def start_quiz():
+def start_like_dislike_quiz():
     global questions,index, button, window, number_of_questions
     questions = []
-    file = open("questions.txt", "r")
+    file = open("Like_Dislike_options.txt", "r")
     line = file.readline()
     while(line != ""):
         questionString = line
         answers = []
-        for i in range (5):
+        for i in range (4):
             answers.append(file.readline())
 
         questions.append(Question(questionString, answers))
@@ -79,9 +61,8 @@ def start_quiz():
     window = Tk()
     window.geometry('925x425')
     window.title("Interest and Personality Mapping - BizInt")
-    button = Button(window, text="Start", command=askQuestion)
-    button.pack()
+    askQuestion()
     window.mainloop()
 
 if __name__ == '__main__':
-    start_quiz()
+    start_like_dislike_quiz()

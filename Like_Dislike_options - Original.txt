@@ -1,0 +1,201 @@
+1. Select only 1 profession among these 4 given professions which would LOVE to pursue
+Tourist Guide
+News Anchor
+Animator
+Teacher
+2. Select only 1 profession among these 4 given professions which would LOVE to pursue
+Accountant
+Librarian
+Teacher
+Sales Executive
+3. Select only 1 profession among these 4 given professions which would LOVE to pursue
+Musician
+Animator
+Teacher
+Lawyer
+4. Select only 1 profession among these 4 given professions which would LOVE to pursue
+Librarian
+Translator
+Animator
+News Anchor
+5. Select only 1 profession among these 4 given professions which would LOVE to pursue
+Tourist Guide
+Accountant
+Translator
+Software developer
+6. Select only 1 profession among these 4 given professions which would LOVE to pursue
+Tourist Guide
+Accountant
+Translator
+Software Developer
+7. Select only 1 profession among these 4 given professions which would LOVE to pursue
+Doctor
+Lawyer
+Musician
+News Anchor
+8. Select only 1 profession among these 4 given professions which would LOVE to pursue
+Accountant
+Sales Executive
+Tourist Guide
+Animator
+9. Select only 1 profession among these 4 given professions which would LOVE to pursue
+Teacher
+Librarian
+News anchor
+Tourist Guide
+10. Select only 1 profession among these 4 given professions which would LOVE to pursue
+Doctor
+Animator
+Librarian
+Musician
+11. Select only 1 profession among these 4 given professions which would LOVE to pursue
+Teacher
+Accountant
+Sales Executive
+Lawyer
+12. Select only 1 profession among these 4 given professions which would LOVE to pursue
+Artist
+Software Developer
+Teacher
+News Anchor
+13. Select only 1 profession among these 4 given professions which would LOVE to pursue
+Physicist
+Accountant
+Doctor
+Teacher
+14. Select only 1 profession among these 4 given professions which would LOVE to pursue
+Lawyer
+Tourist Guide
+Software Developer
+Physicist
+15. Select only 1 profession among these 4 given professions which would LOVE to pursue
+Translator
+Musician
+Artist
+News anchor
+16. Select only 1 profession among these 4 given professions which would LOVE to pursue
+Animator
+Librarian
+Doctor
+Software Developer
+17. Select only 1 profession among these 4 given professions which would LOVE to pursue
+Musician
+Teacher
+Software Developer
+Lawyer
+18.Select only 1 profession among these 4 given professions which would LOVE to pursue
+Tourist Guide
+Physicist
+Accountant
+News Anchor
+19. Select only 1 profession among these 4 given professions which would LOVE to pursue
+Doctor
+Lawyer
+Artist
+Librarian
+20. Select only 1 profession among these 4 given professions which would LOVE to pursue
+Animator
+Sales Executive
+Accountant
+Software Developer
+1. Select only 1 profession among these 4 given professions which would NEVER WANT to pursue
+Tourist Guide
+News Anchor
+Animator
+Teacher
+2. Select only 1 profession among these 4 given professions which would NEVER WANT to pursue
+Accountant
+Librarian
+Teacher
+Sales Executive
+3. Select only 1 profession among these 4 given professions which would NEVER WANT to pursue
+Musician
+Animator
+Teacher
+Lawyer
+4. Select only 1 profession among these 4 given professions which would NEVER WANT to pursue
+Librarian
+Translator
+Animator
+News Anchor
+5. Select only 1 profession among these 4 given professions which would NEVER WANT to pursue
+Tourist Guide
+Accountant
+Translator
+Software developer
+6. Select only 1 profession among these 4 given professions which would NEVER WANT to pursue
+Tourist Guide
+Accountant
+Translator
+Software Developer
+7. Select only 1 profession among these 4 given professions which would NEVER WANT to pursue
+Doctor
+Lawyer
+Musician
+News Anchor
+8. Select only 1 profession among these 4 given professions which would NEVER WANT to pursue
+Accountant
+Sales Executive
+Tourist Guide
+Animator
+9. Select only 1 profession among these 4 given professions which would NEVER WANT to pursue
+Teacher
+Librarian
+News anchor
+Tourist Guide
+10. Select only 1 profession among these 4 given professions which would NEVER WANT to pursue
+Doctor
+Animator
+Librarian
+Musician
+11. Select only 1 profession among these 4 given professions which would NEVER WANT to pursue
+Teacher
+Accountant
+Sales Executive
+Lawyer
+12. Select only 1 profession among these 4 given professions which would NEVER WANT to pursue
+Artist
+Software Developer
+Teacher
+News Anchor
+13. Select only 1 profession among these 4 given professions which would NEVER WANT to pursue
+Physicist
+Accountant
+Doctor
+Teacher
+14. Select only 1 profession among these 4 given professions which would NEVER WANT to pursue
+Lawyer
+Tourist Guide
+Software Developer
+Physicist
+15. Select only 1 profession among these 4 given professions which would NEVER WANT to pursue
+Translator
+Musician
+Artist
+News anchor
+16. Select only 1 profession among these 4 given professions which would NEVER WANT to pursue
+Animator
+Librarian
+Doctor
+Software Developer
+17. Select only 1 profession among these 4 given professions which would NEVER WANT to pursue
+Musician
+Teacher
+Software Developer
+Lawyer
+18.Select only 1 profession among these 4 given professions which would NEVER WANT to pursue
+Tourist Guide
+Physicist
+Accountant
+News Anchor
+19. Select only 1 profession among these 4 given professions which would NEVER WANT to pursue
+Doctor
+Lawyer
+Artist
+Librarian
+20. Select only 1 profession among these 4 given professions which would NEVER WANT to pursue
+Animator
+Sales Executive
+Accountant
+Software Developer
+
